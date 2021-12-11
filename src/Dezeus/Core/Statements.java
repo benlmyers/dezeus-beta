@@ -13,18 +13,23 @@ public class Statements implements Collection<Statement> {
     }
     
     public Statements(Statement a) {
-        statements.add(a);
+        this();
+        add(a);
     }
     
     public Statements(Statement a, Statement b) {
-        statements.add(a);
-        statements.add(b);
+        this(a);
+        add(b);
     }
 
     public Statements(Statement a, Statement b, Statement c) {
-        statements.add(a);
-        statements.add(b);
-        statements.add(c);
+        this(a, b);
+        add(c);
+    }
+
+    public Statements(Statement a, Statement b, Statement c, Statement d) {
+        this(a, b, c);
+        add(d);
     }
 
     // Implmentation
