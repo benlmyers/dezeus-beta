@@ -12,7 +12,7 @@ public class Truth implements Value<Boolean> {
         this(true);
     }
 
-    // Getters
+    // Implementation
 
     @Override
     public Boolean getValue() {

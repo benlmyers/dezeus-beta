@@ -8,7 +8,7 @@ public class Variable<T> implements Value<T> {
         this.name = name;
     }
 
-    // Getters
+    // Implementation
 
     @Override
     public T getValue() {
