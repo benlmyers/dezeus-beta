@@ -1,6 +1,6 @@
 package Dezeus.Core;
 
-public abstract class Statement {
+public interface Statement {
 
-    public abstract Proof show(Deduction deduction) throws Invalidity;
+    public Proof show(Deduction deduction) throws Invalidity;
 }

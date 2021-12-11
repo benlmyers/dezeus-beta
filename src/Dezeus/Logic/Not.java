@@ -2,7 +2,7 @@ package Dezeus.Logic;
 
 import Dezeus.Core.*;
 
-public class Not extends Statement {
+public class Not implements Statement {
     
     private Statement a;
 
