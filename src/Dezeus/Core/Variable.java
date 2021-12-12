@@ -19,4 +19,10 @@ public class Variable<T> implements Value<T> {
     public Justification show(Deduction deduction) throws Invalidation {
         return null;
     }
+
+    // Getters
+
+    public String getName() {
+        return name;
+    }
 }

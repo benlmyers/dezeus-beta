@@ -17,16 +17,20 @@ public class Cond implements Statement {
     public Justification show(Deduction deduction) throws Invalidation {
         Deduction newDeduction = deduction.copy();
         newDeduction.addKnown(ant);
-        return cons.show(newDeduction);
+        try {
+            return cons.show(newDeduction);
+        } catch (Invalidation invalidity) {
+            throw new CondInvalid(invalidity);
+        }
     }
 
     // Justification
 
-    public class ConditionalJustification extends Justification {
+    public class CondJustification extends Justification {
 
         private Justification cons;
 
-        public ConditionalJustification(Justification cons) {
+        public CondJustification(Justification cons) {
             super("Assuming the antecedent is valid, the consequent is valid", "CD");
             this.cons = cons;
         }
@@ -40,12 +44,12 @@ public class Cond implements Statement {
 
     // Invalidation
 
-    public class ConditionalInvalid extends Invalidation {
+    public class CondInvalid extends Invalidation {
 
         private Invalidation invalidity;
 
-        public ConditionalInvalid(String reason) {
-            super(reason);
+        public CondInvalid(Invalidation invalidity) {
+            super("Assuming the antecedent is valid, the consequent is invalid");
             this.invalidity = invalidity;
         }
 

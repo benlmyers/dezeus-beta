@@ -4,7 +4,7 @@ public abstract class Invalidation extends Throwable {
 
     private String reason;
 
-    public Invalidation(String reason) {
+    protected Invalidation(String reason) {
         this.reason = reason;
     }
 
