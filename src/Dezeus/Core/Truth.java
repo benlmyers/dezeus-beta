@@ -1,6 +1,6 @@
 package Dezeus.Core;
 
-public class Truth implements Statement {
+public class Truth extends Statement {
 
     private Boolean value;
 

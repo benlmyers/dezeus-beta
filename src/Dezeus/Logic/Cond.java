@@ -2,7 +2,7 @@ package Dezeus.Logic;
 
 import Dezeus.Core.*;
 
-public class Cond implements Statement {
+public class Cond extends Statement {
 
     private Statement ant, cons;
 

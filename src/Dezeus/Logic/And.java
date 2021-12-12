@@ -2,7 +2,7 @@ package Dezeus.Logic;
 
 import Dezeus.Core.*;
 
-public class And implements Statement {
+public class And extends Statement {
 
     protected Statement a, b;
 

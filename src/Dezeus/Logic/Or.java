@@ -2,7 +2,7 @@ package Dezeus.Logic;
 
 import Dezeus.Core.*;
 
-public class Or implements Statement {
+public class Or extends Statement {
 
     private Statement a, b;
 

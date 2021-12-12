@@ -1,6 +1,6 @@
 package Dezeus.Core;
 
-public class Sentential implements Statement {
+public class Sentential extends Statement {
 
     private String name;
 
