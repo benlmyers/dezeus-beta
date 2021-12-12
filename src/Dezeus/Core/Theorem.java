@@ -6,9 +6,9 @@ import java.nio.file.Path;
 public class Theorem {
     
     private Proposition proposition;
-    private Proof proof;
+    private Justification proof;
 
-    public Theorem(Proposition proposition, Proof proof) {
+    public Theorem(Proposition proposition, Justification proof) {
         this.proposition = proposition;
         this.proof = proof;
     }
@@ -27,7 +27,7 @@ public class Theorem {
         return proposition;
     }
 
-    public Proof getProof() {
+    public Justification getProof() {
         return proof;
     }
 }

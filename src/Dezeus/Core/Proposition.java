@@ -10,7 +10,7 @@ public class Proposition {
         this.conclusion = conclusion;
     }
 
-    public Theorem prove() throws Invalidity {
+    public Theorem prove() throws Invalidation {
         return null;
     }
 

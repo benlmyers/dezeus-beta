@@ -14,4 +14,9 @@ public class Variable<T> implements Value<T> {
     public T getValue() {
         return null;
     }
+
+    @Override
+    public Justification show(Deduction deduction) throws Invalidation {
+        return null;
+    }
 }

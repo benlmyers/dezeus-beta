@@ -11,12 +11,12 @@ public class Statements implements Collection<Statement> {
 
     public Statements() {
     }
-    
+
     public Statements(Statement a) {
         this();
         add(a);
     }
-    
+
     public Statements(Statement a, Statement b) {
         this(a);
         add(b);

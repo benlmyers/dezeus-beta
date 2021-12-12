@@ -1,6 +1,6 @@
 package Dezeus.Core;
 
-public interface Value<T> {
+public interface Value<T> extends Statement {
 
     // Getters
 
