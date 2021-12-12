@@ -2,27 +2,30 @@ package Dezeus.Core;
 
 public class Proposition {
     
-    private Statement premise;
+    private Statements premises;
     private Statement conclusion;
 
-    public Proposition(Statement premise, Statement conclusion) {
-        this.premise = premise;
+    public Proposition(Statements premises, Statement conclusion) {
+        this.premises = premises;
         this.conclusion = conclusion;
     }
 
+    public Proposition(Statement premise, Statement conclusion) {
+        this(new Statements(premise), conclusion);
+    }
+
     public Theorem prove() throws Invalidation {
+        // TODO: Implement
         return null;
     }
 
     // Getters
 
-    public Statement getPremise() {
-        return premise;
+    public Statements getPremises() {
+        return premises;
     }
 
     public Statement getConclusion() {
         return conclusion;
     }
-
-    // Utility Methods
 }
