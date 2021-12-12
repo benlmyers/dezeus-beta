@@ -18,13 +18,13 @@ public class And implements Statement {
         Justification leftJustification, rightJustification;
         try {
             leftJustification = a.show(deduction);
-        } catch (Invalidation invalidity) {
-            throw new AndInvalid(invalidity);
+        } catch (Invalidation invalidation) {
+            throw new AndInvalid(invalidation);
         }
         try {
             rightJustification = b.show(deduction);
-        } catch (Invalidation invalidity) {
-            throw new AndInvalid(invalidity);
+        } catch (Invalidation invalidation) {
+            throw new AndInvalid(invalidation);
         }
         return new AndJustification(leftJustification, rightJustification);
     }
@@ -61,17 +61,17 @@ public class And implements Statement {
 
     public class AndInvalid extends Invalidation {
 
-        private Invalidation invalidity;
+        private Invalidation invalidation;
 
-        public AndInvalid(Invalidation invalidity) {
+        public AndInvalid(Invalidation invalidation) {
             super("One side of the AND is invalid");
-            this.invalidity = invalidity;
+            this.invalidation = invalidation;
         }
 
         // Getters
 
-        public Invalidation getInvalidity() {
-            return invalidity;
+        public Invalidation getinvalidation() {
+            return invalidation;
         }
     }
 }

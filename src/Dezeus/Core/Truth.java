@@ -1,6 +1,6 @@
 package Dezeus.Core;
 
-public class Truth implements Value<Boolean> {
+public class Truth implements Statement {
 
     private Boolean value;
 
@@ -15,17 +15,18 @@ public class Truth implements Value<Boolean> {
     // Implementation
 
     @Override
-    public Boolean getValue(Deduction deduction) {
-        return value;
-    }
-
-    @Override
     public Justification show(Deduction deduction) throws Invalidation {
         if (value) {
             return new TruthJustification();
         } else {
             throw new TruthInvalid();
         }
+    }
+
+    // Getters
+
+    public Boolean getValue() {
+        return value;
     }
 
     @Override

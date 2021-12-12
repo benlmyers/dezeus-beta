@@ -18,12 +18,12 @@ public class Or implements Statement {
         try {
             Justification left = a.show(deduction);
             return new OrJustification(left, true);
-        } catch (Invalidation leftInvalidity) {
+        } catch (Invalidation leftinvalidation) {
             try {
                 Justification right = b.show(deduction);
                 return new OrJustification(right, false);
-            } catch (Invalidation rightInvalidity) {
-                throw new OrInvalid(leftInvalidity, rightInvalidity);
+            } catch (Invalidation rightinvalidation) {
+                throw new OrInvalid(leftinvalidation, rightinvalidation);
             }
         }
     }

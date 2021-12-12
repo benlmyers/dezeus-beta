@@ -19,8 +19,8 @@ public class Cond implements Statement {
         newDeduction.addKnown(ant);
         try {
             return cons.show(newDeduction);
-        } catch (Invalidation invalidity) {
-            throw new CondInvalid(invalidity);
+        } catch (Invalidation invalidation) {
+            throw new CondInvalid(invalidation);
         }
     }
 
@@ -51,17 +51,17 @@ public class Cond implements Statement {
 
     public class CondInvalid extends Invalidation {
 
-        private Invalidation invalidity;
+        private Invalidation invalidation;
 
-        public CondInvalid(Invalidation invalidity) {
+        public CondInvalid(Invalidation invalidation) {
             super("Assuming the antecedent is valid, the consequent is invalid");
-            this.invalidity = invalidity;
+            this.invalidation = invalidation;
         }
 
         // Getters
 
-        public Invalidation getInvalidity() {
-            return invalidity;
+        public Invalidation getinvalidation() {
+            return invalidation;
         }
     }
 }

@@ -17,8 +17,8 @@ public class Not implements Statement {
         try {
             Justification anti = a.show(deduction);
             throw new NotInvalid(anti);
-        } catch (Invalidation invalidity) {
-            return new NotJustification(invalidity);
+        } catch (Invalidation invalidation) {
+            return new NotJustification(invalidation);
         }
     }
 
