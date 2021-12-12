@@ -1,7 +1,5 @@
 package Dezeus.Logic;
 
-import java.io.Console;
-
 import Dezeus.Core.*;
 
 public class Cond extends Statement {
