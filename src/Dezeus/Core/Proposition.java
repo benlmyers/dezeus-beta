@@ -33,6 +33,6 @@ public class Proposition {
 
     @Override
     public String toString() {
-        return premises + " |- " + conclusion;
+        return premises + " ⊢ " + conclusion;
     }
 }

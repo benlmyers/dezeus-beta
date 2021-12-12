@@ -1,5 +1,4 @@
 import Dezeus.Core.*;
-import Dezeus.Logic.*;
 
 public class Dezeus_Tests {
 
@@ -9,18 +8,20 @@ public class Dezeus_Tests {
         Sentential b = new Sentential("B");
         Sentential c = new Sentential("C");
 
-        Statement p = new Cond(a, b);
-        Statement q = new Cond(b, c);
-        Statement r = new Cond(a, c);
+        Statement p = a.implies(b);
+        Statement q = b.implies(c);
+        Statement r = a.implies(c);
 
         Statements premise = new Statements(p, q);
         Statement conclusion = r;
 
         Proposition p1 = new Proposition(premise, conclusion);
+        Debug.log(p1);
+
         try {
             Theorem t1 = p1.prove();
         } catch (Invalidation invalidation) {
-            Debug.log("The proposition is invalid.");
+            Debug.log("The proposition is invalid. Reason: " + invalidation);
         }
     }
 }

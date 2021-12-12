@@ -12,6 +12,6 @@ public class Bicond extends And {
 
     @Override
     public String toString() {
-        return a + " <=> " + b;
+        return a + " ↔ " + b;
     }
 }

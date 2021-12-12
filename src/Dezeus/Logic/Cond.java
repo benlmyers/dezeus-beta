@@ -26,7 +26,7 @@ public class Cond extends Statement {
 
     @Override
     public String toString() {
-        return ant + " => " + cons;
+        return ant + " → " + cons;
     }
 
     // Justification

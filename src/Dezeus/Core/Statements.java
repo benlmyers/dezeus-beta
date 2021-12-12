@@ -101,11 +101,12 @@ public class Statements implements Collection<Statement> {
 
     @Override
     public String toString() {
-        if (size() == 0) return "";
+        if (size() == 0)
+            return "";
         String string = "";
-        for (Statement statement: statements) {
+        for (Statement statement : statements) {
             string += statement + ", ";
         }
-        return string.substring(0, string.length() - 1);
+        return string.substring(0, string.length() - 2);
     }
 }
