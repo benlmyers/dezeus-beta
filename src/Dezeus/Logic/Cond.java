@@ -14,11 +14,9 @@ public class Cond extends Statement {
     // Implementation
 
     @Override
-    public Justification _show(Deduction deduction) throws Invalidation {
-        Deduction newDeduction = deduction.copy();
-        newDeduction.addKnown(ant);
+    protected Justification _show(Deduction deduction) throws Invalidation {
         try {
-            return cons.show(newDeduction);
+            return cons.show(deduction);
         } catch (Invalidation invalidation) {
             throw new CondInvalid(invalidation);
         }

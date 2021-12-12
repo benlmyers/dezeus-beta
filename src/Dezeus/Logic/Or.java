@@ -14,7 +14,7 @@ public class Or extends Statement {
     // Implementation
 
     @Override
-    public Justification _show(Deduction deduction) throws Invalidation {
+    protected Justification _show(Deduction deduction) throws Invalidation {
         try {
             Justification left = a.show(deduction);
             return new OrJustification(left, true);

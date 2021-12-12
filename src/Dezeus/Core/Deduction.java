@@ -16,6 +16,7 @@ public class Deduction {
 
     private Deduction(Deduction mirror) {
         this(mirror.knowns);
+        this.depth = mirror.depth;
     }
 
     // Utility

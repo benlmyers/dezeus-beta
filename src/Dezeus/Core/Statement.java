@@ -4,10 +4,11 @@ import Dezeus.Logic.*;
 
 public abstract class Statement {
 
-    public Justification show(Deduction deduction) throws Invalidation {
-        deduction.depth += 1;
-        Debug.log(empty(deduction.depth) + "SHOW " + this);
-        return _show(deduction);
+    public final Justification show(Deduction deduction) throws Invalidation {
+        Deduction newDeduction = deduction.copy();
+        newDeduction.depth += 1;
+        Debug.log(empty(newDeduction.depth) + "SHOW " + this);
+        return _show(newDeduction);
     }
 
     protected abstract Justification _show(Deduction deduction) throws Invalidation;

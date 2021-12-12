@@ -14,7 +14,7 @@ public class And extends Statement {
     // Implementation
 
     @Override
-    public Justification _show(Deduction deduction) throws Invalidation {
+    protected Justification _show(Deduction deduction) throws Invalidation {
         Justification leftJustification, rightJustification;
         try {
             leftJustification = a.show(deduction);
@@ -31,7 +31,7 @@ public class And extends Statement {
 
     @Override
     public String toString() {
-        return a + " ∧ ";
+        return a + " ∧ " + b;
     }
 
     @Override

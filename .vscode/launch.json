@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Dezeus_Example",
+            "request": "launch",
+            "mainClass": "Dezeus.Test.Dezeus_Example",
+            "projectName": "dezeus-beta_b132d088"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

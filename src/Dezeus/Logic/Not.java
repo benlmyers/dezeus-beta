@@ -13,7 +13,7 @@ public class Not extends Statement {
     // Implementation
 
     @Override
-    public Justification _show(Deduction deduction) throws Invalidation {
+    protected Justification _show(Deduction deduction) throws Invalidation {
         try {
             Justification anti = a.show(deduction);
             throw new NotInvalid(anti);
