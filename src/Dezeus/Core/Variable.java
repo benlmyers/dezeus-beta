@@ -11,7 +11,7 @@ public class Variable<T> implements Value<T> {
     // Implementation
 
     @Override
-    public T getValue() {
+    public T getValue(Deduction deduction) {
         return null;
     }
 

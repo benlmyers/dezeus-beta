@@ -15,7 +15,7 @@ public class Truth implements Value<Boolean> {
     // Implementation
 
     @Override
-    public Boolean getValue() {
+    public Boolean getValue(Deduction deduction) {
         return value;
     }
 

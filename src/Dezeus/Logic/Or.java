@@ -41,6 +41,7 @@ public class Or implements Statement {
 
         public OrJustification(Justification first, boolean isLeft) {
             super("A side of the OR is valid", "OR");
+            this.first = first;
             if (isLeft)
                 super.reason = "The left side of the OR is valid";
             else

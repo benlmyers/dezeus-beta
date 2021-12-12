@@ -4,5 +4,5 @@ public interface Value<T> extends Statement {
 
     // Getters
 
-    T getValue();
+    T getValue(Deduction deduction);
 }
