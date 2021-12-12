@@ -24,6 +24,11 @@ public class Cond implements Statement {
         }
     }
 
+    @Override
+    public String toString() {
+        return ant + " => " + cons;
+    }
+
     // Justification
 
     public class CondJustification extends Justification {

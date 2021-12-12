@@ -28,6 +28,11 @@ public class Or implements Statement {
         }
     }
 
+    @Override
+    public String toString() {
+        return a + " ∨ " + b;
+    }
+
     // Justification
 
     public class OrJustification extends Justification {

@@ -22,6 +22,11 @@ public class Not implements Statement {
         }
     }
 
+    @Override
+    public String toString() {
+        return "¬" + a;
+    }
+
     // Justification
 
     public class NotJustification extends Justification {

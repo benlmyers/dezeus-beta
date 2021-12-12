@@ -1,7 +1,7 @@
 package Dezeus.Core;
 
 public class Proposition {
-    
+
     private Statements premises;
     private Statement conclusion;
 
@@ -27,5 +27,12 @@ public class Proposition {
 
     public Statement getConclusion() {
         return conclusion;
+    }
+
+    // Implementation
+
+    @Override
+    public String toString() {
+        return premises + " |- " + conclusion;
     }
 }

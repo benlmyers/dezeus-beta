@@ -98,4 +98,14 @@ public class Statements implements Collection<Statement> {
     public void clear() {
         statements.clear();
     }
+
+    @Override
+    public String toString() {
+        if (size() == 0) return "";
+        String string = "";
+        for (Statement statement: statements) {
+            string += statement + ", ";
+        }
+        return string.substring(0, string.length() - 1);
+    }
 }

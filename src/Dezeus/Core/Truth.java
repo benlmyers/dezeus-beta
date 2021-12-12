@@ -28,6 +28,11 @@ public class Truth implements Value<Boolean> {
         }
     }
 
+    @Override
+    public String toString() {
+        return value ? "T" : "F";
+    }
+
     // Justification
 
     public class TruthJustification extends Justification {

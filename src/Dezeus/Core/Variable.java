@@ -20,6 +20,11 @@ public class Variable<T> implements Value<T> {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     // Getters
 
     public String getName() {

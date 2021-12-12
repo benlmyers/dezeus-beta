@@ -4,7 +4,7 @@ import Dezeus.Core.*;
 
 public class And implements Statement {
 
-    private Statement a, b;
+    protected Statement a, b;
 
     public And(Statement a, Statement b) {
         this.a = a;
@@ -27,6 +27,11 @@ public class And implements Statement {
             throw new AndInvalid(invalidity);
         }
         return new AndJustification(leftJustification, rightJustification);
+    }
+
+    @Override
+    public String toString() {
+        return a + " ∧ ";
     }
 
     // Justification
