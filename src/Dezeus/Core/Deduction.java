@@ -3,6 +3,7 @@ package Dezeus.Core;
 public class Deduction {
 
     public Statements knowns = new Statements();
+    public int depth = 0;
 
     public Deduction() {
     }

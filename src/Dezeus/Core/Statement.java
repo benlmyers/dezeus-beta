@@ -4,7 +4,13 @@ import Dezeus.Logic.*;
 
 public abstract class Statement {
 
-    public abstract Justification show(Deduction deduction) throws Invalidation;
+    public Justification show(Deduction deduction) throws Invalidation {
+        deduction.depth += 1;
+        Debug.log(empty(deduction.depth) + "SHOW " + this);
+        return _show(deduction);
+    }
+
+    protected abstract Justification _show(Deduction deduction) throws Invalidation;
 
     public abstract Statements getComponents();
 
@@ -36,5 +42,15 @@ public abstract class Statement {
 
     public Bicond iff(Statement b) {
         return new Bicond(this, b);
+    }
+
+    // Private Utility
+
+    private static String empty(int count) {
+        String str = "";
+        for (int i = 0; i < count; i++) {
+            str += " ";
+        }
+        return str;
     }
 }

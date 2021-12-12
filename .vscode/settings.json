@@ -2,5 +2,10 @@
     "java.project.sourcePaths": [
         "src",
         "tests"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/benmyers/Downloads/hamcrest-core-1.3.jar",
+        "/Users/benmyers/Downloads/junit-4.13.2.jar"
     ]
 }

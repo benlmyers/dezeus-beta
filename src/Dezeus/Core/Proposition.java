@@ -15,8 +15,10 @@ public class Proposition {
     }
 
     public Theorem prove() throws Invalidation {
-        // TODO: Implement
-        return null;
+        Debug.log("PROVE " + this);
+        Deduction deduction = new Deduction(premises);
+        Justification justification = conclusion.show(deduction);
+        return new Theorem(this, justification);
     }
 
     // Getters

@@ -1,6 +1,8 @@
+package Dezeus.Test;
+
 import Dezeus.Core.*;
 
-public class Dezeus_Tests {
+public class Dezeus_Example {
 
     public static void main(String[] args) {
 

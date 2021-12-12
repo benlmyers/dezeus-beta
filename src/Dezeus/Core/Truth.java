@@ -15,7 +15,7 @@ public class Truth extends Statement {
     // Implementation
 
     @Override
-    public Justification show(Deduction deduction) throws Invalidation {
+    public Justification _show(Deduction deduction) throws Invalidation {
         if (value) {
             return new TruthJustification();
         } else {

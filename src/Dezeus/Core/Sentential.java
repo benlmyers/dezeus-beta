@@ -11,7 +11,7 @@ public class Sentential extends Statement {
     // Implementation
 
     @Override
-    public Justification show(Deduction deduction) throws Invalidation {
+    public Justification _show(Deduction deduction) throws Invalidation {
         // TODO: Show a variable
         return null;
     }

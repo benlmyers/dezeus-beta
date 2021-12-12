@@ -14,7 +14,7 @@ public class And extends Statement {
     // Implementation
 
     @Override
-    public Justification show(Deduction deduction) throws Invalidation {
+    public Justification _show(Deduction deduction) throws Invalidation {
         Justification leftJustification, rightJustification;
         try {
             leftJustification = a.show(deduction);
