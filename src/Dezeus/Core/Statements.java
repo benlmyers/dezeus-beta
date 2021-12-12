@@ -109,4 +109,27 @@ public class Statements implements Collection<Statement> {
         }
         return string.substring(0, string.length() - 2);
     }
+
+    // Utility
+
+    public Statement toStatement() {
+        if (size() == 0)
+            return null;
+        Statement[] arr = (Statement[]) toArray();
+        Statement statement = arr[0];
+        if (size() == 1)
+            return statement;
+        for (int i = 1; i < arr.length; i++) {
+            statement = statement.and(arr[i]);
+        }
+        return statement;
+    }
+
+    public int logicalSize() {
+        int count = 0;
+        for (Statement statement : statements) {
+            count += statement.logicalSize();
+        }
+        return count;
+    }
 }

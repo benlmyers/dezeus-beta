@@ -1,5 +1,7 @@
 package Dezeus.Logic;
 
+import java.io.Console;
+
 import Dezeus.Core.*;
 
 public class Cond extends Statement {
@@ -27,6 +29,11 @@ public class Cond extends Statement {
     @Override
     public String toString() {
         return ant + " → " + cons;
+    }
+
+    @Override
+    public Statements getComponents() {
+        return new Statements(ant, cons);
     }
 
     // Justification

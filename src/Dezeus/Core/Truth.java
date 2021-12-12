@@ -23,6 +23,16 @@ public class Truth extends Statement {
         }
     }
 
+    @Override
+    public int logicalSize() {
+        return 1;
+    }
+
+    @Override
+    public Statements getComponents() {
+        return new Statements(this);
+    }
+
     // Getters
 
     public Boolean getValue() {

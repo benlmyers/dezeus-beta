@@ -6,6 +6,12 @@ public abstract class Statement {
 
     public abstract Justification show(Deduction deduction) throws Invalidation;
 
+    public abstract Statements getComponents();
+
+    public int logicalSize() {
+        return getComponents().logicalSize();
+    }
+
     // Utility
 
     public And and(Statement b) {

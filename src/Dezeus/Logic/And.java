@@ -34,6 +34,11 @@ public class And extends Statement {
         return a + " ∧ ";
     }
 
+    @Override
+    public Statements getComponents() {
+        return new Statements(a, b);
+    }
+
     // Justification
 
     public class AndJustification extends Justification {

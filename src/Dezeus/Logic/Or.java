@@ -33,6 +33,11 @@ public class Or extends Statement {
         return a + " ∨ " + b;
     }
 
+    @Override
+    public Statements getComponents() {
+        return new Statements(a, b);
+    }
+
     // Justification
 
     public class OrJustification extends Justification {

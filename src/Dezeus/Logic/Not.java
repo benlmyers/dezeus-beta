@@ -27,6 +27,11 @@ public class Not extends Statement {
         return "¬" + a;
     }
 
+    @Override
+    public Statements getComponents() {
+        return new Statements(a);
+    }
+
     // Justification
 
     public class NotJustification extends Justification {

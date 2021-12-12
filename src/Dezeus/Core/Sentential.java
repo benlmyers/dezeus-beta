@@ -20,4 +20,14 @@ public class Sentential extends Statement {
     public String toString() {
         return name;
     }
+
+    @Override
+    public int logicalSize() {
+        return 1;
+    }
+
+    @Override
+    public Statements getComponents() {
+        return new Statements(this);
+    }
 }
