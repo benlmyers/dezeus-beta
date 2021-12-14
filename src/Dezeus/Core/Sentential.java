@@ -1,10 +1,14 @@
 package Dezeus.Core;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Sentential extends Statement {
 
     private String name;
 
-    public Sentential(String name) {
+    @JsonCreator
+    public Sentential(@JsonProperty("name") String name) {
         this.name = name;
     }
 

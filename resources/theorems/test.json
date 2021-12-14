@@ -2,20 +2,25 @@
   "name" : null,
   "proposition" : {
     "premises" : [ {
+      "@type" : "Sentential",
       "name" : "A",
       "statementType" : "Sentential Variable"
     }, {
+      "@type" : "Cond",
       "antecedent" : {
+        "@type" : "Sentential",
         "name" : "A",
         "statementType" : "Sentential Variable"
       },
       "consequent" : {
+        "@type" : "Sentential",
         "name" : "B",
         "statementType" : "Sentential Variable"
       },
       "statementType" : "Conditional"
     } ],
     "conclusion" : {
+      "@type" : "Sentential",
       "name" : "B",
       "statementType" : "Sentential Variable"
     }

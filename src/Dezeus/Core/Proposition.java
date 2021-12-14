@@ -1,11 +1,16 @@
 package Dezeus.Core;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Proposition {
 
     private Statements premises;
     private Statement conclusion;
 
-    public Proposition(Statements premises, Statement conclusion) {
+    @JsonCreator
+    public Proposition(@JsonProperty("premises") Statements premises,
+            @JsonProperty("conclusion") Statement conclusion) {
         this.premises = premises;
         this.conclusion = conclusion;
     }

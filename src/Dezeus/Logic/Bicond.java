@@ -1,10 +1,14 @@
 package Dezeus.Logic;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import Dezeus.Core.Statement;
 
 public class Bicond extends And {
 
-    public Bicond(Statement a, Statement b) {
+    @JsonCreator
+    public Bicond(@JsonProperty("left") Statement a, @JsonProperty("right") Statement b) {
         super(new Cond(a, b), new Cond(b, a));
     }
 

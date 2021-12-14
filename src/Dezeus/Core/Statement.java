@@ -1,9 +1,26 @@
 package Dezeus.Core;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import Dezeus.Logic.*;
+import Dezeus.Logic.And;
+import Dezeus.Logic.Bicond;
+import Dezeus.Logic.Cond;
+import Dezeus.Logic.Not;
+import Dezeus.Logic.Or;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Sentential.class, name = "Sentential"),
+        @JsonSubTypes.Type(value = And.class, name = "And"),
+        @JsonSubTypes.Type(value = Bicond.class, name = "Bicond"),
+        @JsonSubTypes.Type(value = Cond.class, name = "Cond"),
+        @JsonSubTypes.Type(value = Not.class, name = "Not"),
+        @JsonSubTypes.Type(value = Or.class, name = "Or"),
+})
 public abstract class Statement {
 
     public final Justification show(Deduction deduction) throws Invalidation {

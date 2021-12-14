@@ -5,9 +5,17 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Statements implements Collection<Statement> {
 
     private Set<Statement> statements = new HashSet<>();
+
+    @JsonCreator
+    public Statements(@JsonProperty("statements") Set<Statement> statements) {
+        this.statements = statements;
+    }
 
     public Statements() {
     }

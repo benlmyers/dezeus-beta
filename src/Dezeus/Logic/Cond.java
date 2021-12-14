@@ -1,12 +1,20 @@
 package Dezeus.Logic;
 
-import Dezeus.Core.*;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import Dezeus.Core.Deduction;
+import Dezeus.Core.Invalidation;
+import Dezeus.Core.Justification;
+import Dezeus.Core.Statement;
+import Dezeus.Core.Statements;
 
 public class Cond extends Statement {
 
     private Statement ant, cons;
 
-    public Cond(Statement ant, Statement cons) {
+    @JsonCreator
+    public Cond(@JsonProperty("antecedent") Statement ant, @JsonProperty("consequent") Statement cons) {
         this.ant = ant;
         this.cons = cons;
     }

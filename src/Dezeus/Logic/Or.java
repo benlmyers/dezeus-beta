@@ -1,12 +1,20 @@
 package Dezeus.Logic;
 
-import Dezeus.Core.*;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import Dezeus.Core.Deduction;
+import Dezeus.Core.Invalidation;
+import Dezeus.Core.Justification;
+import Dezeus.Core.Statement;
+import Dezeus.Core.Statements;
 
 public class Or extends Statement {
 
     private Statement a, b;
 
-    public Or(Statement a, Statement b) {
+    @JsonCreator
+    public Or(@JsonProperty("left") Statement a, @JsonProperty("right") Statement b) {
         this.a = a;
         this.b = b;
     }
