@@ -38,6 +38,11 @@ public class Or extends Statement {
         return new Statements(a, b);
     }
 
+    @Override
+    public String getStatementType() {
+        return "Or";
+    }
+
     // Getters
 
     public Statement getLeft() {

@@ -14,4 +14,9 @@ public class Bicond extends And {
     public String toString() {
         return a + " ↔ " + b;
     }
+
+    @Override
+    public String getStatementType() {
+        return "Biconditional";
+    }
 }

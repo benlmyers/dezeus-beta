@@ -1,0 +1,27 @@
+{
+  "name" : null,
+  "proposition" : {
+    "premises" : [ {
+      "name" : "A",
+      "statementType" : "Sentential Variable"
+    }, {
+      "antecedent" : {
+        "name" : "A",
+        "statementType" : "Sentential Variable"
+      },
+      "consequent" : {
+        "name" : "B",
+        "statementType" : "Sentential Variable"
+      },
+      "statementType" : "Conditional"
+    } ],
+    "conclusion" : {
+      "name" : "B",
+      "statementType" : "Sentential Variable"
+    }
+  },
+  "proof" : {
+    "reason" : "This is a manual justification",
+    "symbol" : "!"
+  }
+}

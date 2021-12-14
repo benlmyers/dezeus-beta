@@ -39,6 +39,11 @@ public class And extends Statement {
         return new Statements(a, b);
     }
 
+    @Override
+    public String getStatementType() {
+        return "And";
+    }
+
     // Getters
 
     public Statement getLeft() {

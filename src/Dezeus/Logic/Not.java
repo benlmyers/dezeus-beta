@@ -32,6 +32,11 @@ public class Not extends Statement {
         return new Statements(a);
     }
 
+    @Override
+    public String getStatementType() {
+        return "Not";
+    }
+
     // Getters
 
     public Statement getNegated() {

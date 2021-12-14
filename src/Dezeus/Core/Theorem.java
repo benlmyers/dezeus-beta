@@ -2,6 +2,8 @@ package Dezeus.Core;
 
 import java.io.File;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 
 public class Theorem {
@@ -9,14 +11,26 @@ public class Theorem {
     private Proposition proposition;
     private Justification proof;
 
-    public Theorem(Proposition proposition, Justification proof) {
+    private String name;
+
+    @JsonCreator
+    public Theorem(
+            @JsonProperty("name") String name,
+            @JsonProperty("proposition") Proposition proposition,
+            @JsonProperty("proof") Justification proof) {
+        this.name = name;
         this.proposition = proposition;
         this.proof = proof;
     }
 
-    public Theorem() throws Exception {
+    public Theorem(Proposition proposition, Justification proof) {
+        this(null, proposition, proof);
+    }
+
+    public static Theorem load(File file) throws Exception {
         JsonMapper mapper = new JsonMapper();
-        mapper.readValue(correspondingFile(), this.getClass());
+        Theorem theorem = mapper.readValue(file, Theorem.class);
+        return theorem;
     }
 
     public void saveToFile() throws Exception {
@@ -38,5 +52,9 @@ public class Theorem {
 
     public Justification getProof() {
         return proof;
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -30,6 +30,11 @@ public class Sentential extends Statement {
         return new Statements(this);
     }
 
+    @Override
+    public String getStatementType() {
+        return "Sentential Variable";
+    }
+
     // Getters
 
     public String getName() {

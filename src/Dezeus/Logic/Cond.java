@@ -32,6 +32,11 @@ public class Cond extends Statement {
         return new Statements(ant, cons);
     }
 
+    @Override
+    public String getStatementType() {
+        return "Conditional";
+    }
+
     // Getters
 
     public Statement getAntecedent() {

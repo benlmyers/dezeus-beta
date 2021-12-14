@@ -22,6 +22,8 @@ public abstract class Statement {
         return getComponents().logicalSize();
     }
 
+    public abstract String getStatementType();
+
     // Utility
 
     public And and(Statement b) {
