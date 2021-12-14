@@ -38,6 +38,16 @@ public class Or extends Statement {
         return new Statements(a, b);
     }
 
+    // Getters
+
+    public Statement getLeft() {
+        return a;
+    }
+
+    public Statement getRight() {
+        return b;
+    }
+
     // Justification
 
     public class OrJustification extends Justification {

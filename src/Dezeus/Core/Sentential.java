@@ -12,7 +12,6 @@ public class Sentential extends Statement {
 
     @Override
     protected Justification _show(Deduction deduction) throws Invalidation {
-        // TODO: Show a variable
         return null;
     }
 
@@ -29,5 +28,11 @@ public class Sentential extends Statement {
     @Override
     public Statements getComponents() {
         return new Statements(this);
+    }
+
+    // Getters
+
+    public String getName() {
+        return name;
     }
 }

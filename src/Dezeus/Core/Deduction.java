@@ -12,6 +12,11 @@ public class Deduction {
         this.knowns = knowns;
     }
 
+    /*
+     * public Justification dezeus(Sentential sentential) throws Invalidation {
+     * }
+     */
+
     // Mirroring
 
     private Deduction(Deduction mirror) {

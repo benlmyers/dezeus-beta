@@ -32,6 +32,16 @@ public class Cond extends Statement {
         return new Statements(ant, cons);
     }
 
+    // Getters
+
+    public Statement getAntecedent() {
+        return ant;
+    }
+
+    public Statement getConsequent() {
+        return cons;
+    }
+
     // Justification
 
     public class CondJustification extends Justification {

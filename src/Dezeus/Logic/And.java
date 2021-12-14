@@ -39,6 +39,16 @@ public class And extends Statement {
         return new Statements(a, b);
     }
 
+    // Getters
+
+    public Statement getLeft() {
+        return a;
+    }
+
+    public Statement getRight() {
+        return b;
+    }
+
     // Justification
 
     public class AndJustification extends Justification {
@@ -75,7 +85,7 @@ public class And extends Statement {
 
         // Getters
 
-        public Invalidation getinvalidation() {
+        public Invalidation getInvalidation() {
             return invalidation;
         }
     }

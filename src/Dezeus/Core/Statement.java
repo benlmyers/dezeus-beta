@@ -1,5 +1,7 @@
 package Dezeus.Core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import Dezeus.Logic.*;
 
 public abstract class Statement {
@@ -13,6 +15,7 @@ public abstract class Statement {
 
     protected abstract Justification _show(Deduction deduction) throws Invalidation;
 
+    @JsonIgnore
     public abstract Statements getComponents();
 
     public int logicalSize() {

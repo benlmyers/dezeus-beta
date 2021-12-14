@@ -32,6 +32,12 @@ public class Not extends Statement {
         return new Statements(a);
     }
 
+    // Getters
+
+    public Statement getNegated() {
+        return a;
+    }
+
     // Justification
 
     public class NotJustification extends Justification {

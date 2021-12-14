@@ -8,23 +8,18 @@ public class Dezeus_Example {
 
         Sentential a = new Sentential("A");
         Sentential b = new Sentential("B");
-        Sentential c = new Sentential("C");
-        Sentential d = new Sentential("D");
 
-        Statement p = a.implies(b);
-        Statement q = b.implies(c);
-        Statement r = a.implies(c);
-        Statement s = a.and(d);
-
-        Statements premise = new Statements(a, p, q, d);
-        Statement conclusion = s;
+        Statements premise = new Statements(a.implies(b), a);
+        Statement conclusion = b;
 
         Proposition p1 = new Proposition(premise, conclusion);
 
+        Theorem test = new Theorem(p1, Justification.manual);
+
         try {
-            Theorem t1 = p1.prove();
-        } catch (Invalidation invalidation) {
-            Debug.log("The proposition is invalid. Reason: " + invalidation);
+            test.saveToFile();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
