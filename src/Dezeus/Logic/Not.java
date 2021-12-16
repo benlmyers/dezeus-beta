@@ -1,11 +1,14 @@
 package Dezeus.Logic;
 
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import Dezeus.Core.Deduction;
 import Dezeus.Core.Invalidation;
 import Dezeus.Core.Justification;
+import Dezeus.Core.Sentential;
 import Dezeus.Core.Statement;
 import Dezeus.Core.Statements;
 
@@ -43,6 +46,11 @@ public class Not extends Statement {
     @Override
     public String getStatementType() {
         return "Not";
+    }
+
+    @Override
+    public boolean isTrue(Set<Sentential> provisions) {
+        return !a.isTrue(provisions);
     }
 
     // Getters

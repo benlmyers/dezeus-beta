@@ -27,6 +27,14 @@ public class Proposition {
         return new Theorem(this, justification);
     }
 
+    public int[] characteristicIntPair() {
+        Statement premise = premises.toStatement();
+        int premiseInt = premise.characteristicInt();
+        int conclusionInt = conclusion.characteristicInt();
+        int[] pair = { premiseInt, conclusionInt };
+        return pair; 
+    }
+
     // Getters
 
     public Statements getPremises() {

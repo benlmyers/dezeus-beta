@@ -1,5 +1,7 @@
 package Dezeus.Core;
 
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -37,6 +39,11 @@ public class Sentential extends Statement {
     @Override
     public String getStatementType() {
         return "Sentential Variable";
+    }
+
+    @Override
+    public boolean isTrue(Set<Sentential> provisions) {
+        return provisions.contains(this);
     }
 
     // Getters

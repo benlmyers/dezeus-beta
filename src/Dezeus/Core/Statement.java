@@ -1,5 +1,8 @@
 package Dezeus.Core;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -10,6 +13,7 @@ import Dezeus.Logic.Bicond;
 import Dezeus.Logic.Cond;
 import Dezeus.Logic.Not;
 import Dezeus.Logic.Or;
+import Dezeus.Logic.TruthTable;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)
@@ -35,9 +39,28 @@ public abstract class Statement {
     @JsonIgnore
     public abstract Statements getComponents();
 
+    @JsonIgnore
+    public Set<Sentential> getSententials() {
+        Statements components = getComponents();
+        Set<Sentential> sententials = new HashSet<>();
+        for (Statement component : components) {
+            if (component instanceof Sentential sentential) {
+                sententials.add(sentential);
+            }
+        }
+        return sententials;
+    }
+
     public int logicalSize() {
         return getComponents().logicalSize();
     }
+
+    public int characteristicInt() {
+        TruthTable truthTable = new TruthTable(this);
+        return truthTable.characteristicInt();
+    }
+
+    public abstract boolean isTrue(Set<Sentential> provisions);
 
     public abstract String getStatementType();
 
