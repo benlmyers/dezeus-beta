@@ -20,4 +20,4 @@ jobs:
         with:
           distribution: 'adopt' # See 'Supported distributions' for available options
           java-version: '16'
-      - run: java -cp java Dezeus.example
+      - run: java -cp java Dezeus.Test.Dezeus_Example 
