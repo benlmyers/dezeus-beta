@@ -8,15 +8,34 @@ import Dezeus.Core.Sentential;
 import Dezeus.Core.Statement;
 
 public class CharacteristicInt_Test {
-    
+
     @Test
-    public void test() {
+    public void oneVar() {
+
+        Sentential a = new Sentential("A");
+
+        Statement p = a.not();
+
+        assertEquals(1, a.characteristicInt());
+        assertEquals(0, p.characteristicInt());
+    }
+
+    @Test
+    public void twoVar() {
 
         Sentential a = new Sentential("A");
         Sentential b = new Sentential("B");
 
-        assertEquals(a.characteristicInt(), 1);
-        // assertEquals(b.characteristicInt(), 2);
-        // assertEquals(a.implies(b).characteristicInt(), 5);
+        Statement p = a.implies(b);
+        Statement q = a.and(b);
+        Statement r = a.or(b);
+        Statement s = a.iff(b);
+        Statement t = a.provided(b);
+
+        assertEquals(10, p.characteristicInt());
+        assertEquals(1, q.characteristicInt());
+        assertEquals(13, r.characteristicInt());
+        assertEquals(0, s.characteristicInt());
+        assertEquals(6, t.characteristicInt());
     }
 }

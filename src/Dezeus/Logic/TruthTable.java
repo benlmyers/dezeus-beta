@@ -15,7 +15,7 @@ public class TruthTable {
         this.statement = statement;
         Set<Sentential> sententials = statement.getSententials();
         Set<Set<Sentential>> conditions = SetUtility.getSubsets(sententials);
-        int rowCount = (int) Math.pow(2, conditions.size() - (double) 1);
+        int rowCount = conditions.size();
         this.rows = new TruthTableRow[rowCount];
         int index = 0;
         for (Set<Sentential> condition : conditions) {
