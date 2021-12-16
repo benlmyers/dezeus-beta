@@ -1,6 +1,7 @@
 package Dezeus.Core;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Proposition {
@@ -41,5 +42,17 @@ public class Proposition {
     @Override
     public String toString() {
         return premises + " ⊢ " + conclusion;
+    }
+
+    // Utility
+
+    @JsonIgnore
+    public Statements getComponents() {
+        Statements components = new Statements();
+        for(Statement premise: premises) {
+            components.addAll(premise.getComponents());
+        }
+        components.addAll(conclusion.getComponents());
+        return components;
     }
 }

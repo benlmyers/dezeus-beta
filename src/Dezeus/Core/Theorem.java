@@ -1,6 +1,8 @@
 package Dezeus.Core;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -42,6 +44,15 @@ public class Theorem {
 
     private File correspondingFile() {
         return new File("resources/theorems/test.json");
+    }
+
+    public Set<Class<? extends Statement>> appliesTo() {
+        Statements components = proposition.getComponents();
+        Set<Class<? extends Statement>> types = new HashSet<>();
+        for(Statement component: components) {
+            types.add(component.getClass());
+        }
+        return types;
     }
 
     // Getters
